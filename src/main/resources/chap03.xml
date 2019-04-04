@@ -7,7 +7,15 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- Greeter greeter = new org.lcy.jdbc.sping.chap2.Greeter() -->
-	<bean id="greeter" class="org.lcy.jdbc.sping.chap2.Greeter" />
+	<bean id="memberDao" class="org.lcy.book.chap03.MemberDao" />
+
+	
+
+	<!-- dependency injection by setter -->
+	
+	<bean id="memberRegisterService"
+		class="org.lcy.book.chap03.MemberRegisterService">
+		<property name="memberDao" ref="memberDao"/>
+	</bean>
 
 </beans>
