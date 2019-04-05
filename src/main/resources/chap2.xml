@@ -9,5 +9,6 @@
 
 	<!-- Greeter greeter = new org.lcy.book.Ex3.Greeter() -->
 	<bean id="greeter" class="org.lcy.jdbc.sping.Greeter" />
+	
 
 </beans>
