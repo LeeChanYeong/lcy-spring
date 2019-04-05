@@ -7,7 +7,7 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- Greeter greeter = new org.lcy.jdbc.sping.chap2.Greeter() -->
-	<bean id="greeter" class="org.lcy.jdbc.sping.chap2.Greeter" />
+	<!-- Greeter greeter = new org.lcy.book.Ex3.Greeter() -->
+	<bean id="greeter" class="org.lcy.book.Ex3.Greeter" />
 
 </beans>
