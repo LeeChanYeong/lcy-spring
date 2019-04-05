@@ -1,21 +1,20 @@
-package org.lcy.book.chap03;
-
+package org.lcy.book.chap04;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.lcy.book.chap03.DuplicateMemberException;
+import org.lcy.book.chap03.Member;
+import org.lcy.book.chap03.RegisterRequest;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class MemberRegisterService {
 
+	@Autowired
 	private MemberDao memberDao;
 
 	static Logger logger = LogManager.getLogger();
-
-	/**
-	 * memberDao를 초기화하는 컨스트럭터
-	 */
-	public MemberRegisterService(MemberDao memberDao) {
-		this.memberDao = memberDao;
-	}
 
 	/**
 	 * 회원 등록
@@ -23,7 +22,7 @@ public class MemberRegisterService {
 	 * @param req 사용자가 입력한 회원 정보
 	 * @throws DuplicateMemberException 이메일이 중복될 경우에 발생
 	 */
-	public void regist(RegisterRequest req) throws DuplicateMemberException {
+	public void regist(RegisterRequest req) {
 		logger.debug(req);
 		Member member = memberDao.selectByEmail(req.getEmail());
 
